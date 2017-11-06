@@ -1,17 +1,24 @@
 function capitalize(s){
-  var capArray = [];
-  var returnArray = [];
+  let capArray = [];
+  let returnArray = [];
+  let str = '';
   capArray = s.split('');
-  for (let i = 0; i <s.length; i+2){
-    capArray[i].toUpperCase();
+  for (let i = 0; i < capArray.length; i++){
+    if ((i % 2) === 0){
+      str += capArray[i].toUpperCase();
+    }else {
+      str += capArray[i];
+    }
   }
-  returnArray.push(capArray);
-  for (let j = 0; j < s.length; j++){
-    capArray[j].toLowerCase();
+  returnArray[0] = str;
+  str = '';
+  for (let i = 0; i < capArray.length; i++) {
+    if ((i % 2) === 0){
+      str += capArray[i];
+    }else{
+      str += capArray[i].toUpperCase();
+    }
   }
-  for (let k = 1; k < s.length; k+2){
-    capArray[k].toUpperCase();
-  }
-  returnArray.push(capArray);
+  returnArray[1] = str;
   return returnArray;
 };
